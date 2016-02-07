@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Lwx-YP-mvi">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="z7h-Kz-jrd">
+            <objects>
+                <navigationController id="Lwx-YP-mvi" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XDD-VL-jXW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PJs-vs-Apa" kind="relationship" relationship="rootViewController" id="QKN-v2-wpk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5h-2T-N1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="15" y="291"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ke7-ol-k81">
+            <objects>
+                <viewController id="PJs-vs-Apa" customClass="MapViewController" customModule="GoogleTute" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gTb-Re-Miz"/>
+                        <viewControllerLayoutGuide type="bottom" id="5rd-PT-I6O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IZB-oM-FjE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bH6-mH-EJU" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bH6-mH-EJU" firstAttribute="leading" secondItem="IZB-oM-FjE" secondAttribute="leading" id="9hv-XZ-32Y"/>
+                            <constraint firstItem="bH6-mH-EJU" firstAttribute="top" secondItem="IZB-oM-FjE" secondAttribute="top" id="axz-xd-ni8"/>
+                            <constraint firstAttribute="trailing" secondItem="bH6-mH-EJU" secondAttribute="trailing" id="kTE-bG-fUm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9sX-4S-dOh">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="DtA-Da-Yvf">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fSM-Or-O0b">
+                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="6d0-Ia-4Oo">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Te-nb-oeP">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Direction"/>
+                                <connections>
+                                    <action selector="showDirection:" destination="PJs-vs-Apa" eventType="touchUpInside" id="uhv-WO-cbC"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="bH6-mH-EJU" id="Dce-zG-te8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CDe-dh-YlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746" y="291"/>
+        </scene>
+        <!--Parse View Controller-->
+        <scene sceneID="fqm-6U-Pk0">
+            <objects>
+                <viewController id="YQf-Pg-qhW" customClass="ParseViewController" customModule="GoogleTute" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kQX-uX-ELS"/>
+                        <viewControllerLayoutGuide type="bottom" id="aUk-83-xeZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="P1E-B4-xxh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Testos" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HIn-dz-0is">
+                                <rect key="frame" x="0.0" y="84" width="600" height="516"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="parseText" destination="HIn-dz-0is" id="zoO-N8-weg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NhR-Dd-Nlh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1423" y="291"/>
+        </scene>
+    </scenes>
+</document>

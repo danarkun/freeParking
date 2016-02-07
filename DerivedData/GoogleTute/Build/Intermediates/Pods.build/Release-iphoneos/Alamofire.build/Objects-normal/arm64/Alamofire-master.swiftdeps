@@ -1,0 +1,18 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "b8aba9ae4c7494ab448137bbcb0c5a0d"
+build_time: [507856966, 125023000]
+inputs:
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/Validation.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/Upload.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/Request.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/Alamofire.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/Download.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/ParameterEncoding.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/Manager.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/Result.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/ResponseSerialization.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/Error.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/Response.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/Stream.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/MultipartFormData.swift": [507742034, 0]
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/Alamofire/Source/ServerTrustPolicy.swift": [507742034, 0]
