@@ -16,20 +16,19 @@ class ParseViewController: UIViewController {
         print("Start viewDidLoad")
     }
     
-    func returnParse() -> (lat: String, long: String)    {
+    func returnParse() -> [(lat: String, long: String, timeZone: String)]    {
         let url = NSURL(string: "https://dl.dropboxusercontent.com/u/50133881/CSV/coords.csv")
         let error = NSErrorPointer()
         let firstRow = parseCSV(url!, encoding: NSUTF8StringEncoding, error: error)
-        let firstCoord = firstRow.first
-        //  let lastCoord = firstRow.last
-        return firstCoord!
+        return firstRow
+        // return firstRow to return whole tuple then operate in MapViewController::addMarker()
     }
     
     // Parsing
-    func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding, error: NSErrorPointer) -> [(lat:String, long:String)] {
+    func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding, error: NSErrorPointer) -> [(lat:String, long:String, timeZone: String)] {
         // Load the CSV file and parse it
         let delimiter = ","
-        var coords:[(lat: String, long: String)]?
+        var coords:[(lat: String, long: String, timeZone: String)]?
         if let data = NSData(contentsOfURL: contentsOfURL){
             if let content = NSString(data: data, encoding: NSUTF8StringEncoding) {
                 coords = []
@@ -73,7 +72,7 @@ class ParseViewController: UIViewController {
                         }
                         
                         // Put the values into the tuple and add it to the peoples array
-                        let coord = (lat: values[0], long: values[1])
+                        let coord = (lat: values[0], long: values[1], timeZone: values[2])
                         coords?.append(coord)
                     }
                     

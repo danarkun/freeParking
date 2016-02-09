@@ -1,7 +1,0 @@
-version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
-options: "80550ffc480a63df0754b1775a5a341a"
-build_time: [507988512, 100768000]
-inputs:
-  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/GoogleTute/MapViewController.swift": [507979571, 0]
-  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/GoogleTute/AppDelegate.swift": [507869475, 0]
-  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/GoogleTute/ParseViewController.swift": [9223372036854775807, 0]

@@ -8,15 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0BD3E9D941C53682BA9946F7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9716E23F072AA423432AE7 /* Pods.framework */; };
-		37308D531C60F47900DAE9AB /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 37308D521C60F47900DAE9AB /* GoogleMaps.bundle */; };
 		379979AA1C631D6C00815B18 /* ParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379979A91C631D6C00815B18 /* ParseViewController.swift */; };
 		37ECC91C1C5FAE22005B0767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC91B1C5FAE22005B0767 /* AppDelegate.swift */; };
 		37ECC91E1C5FAE22005B0767 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC91D1C5FAE22005B0767 /* MapViewController.swift */; };
 		37ECC9211C5FAE22005B0767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37ECC91F1C5FAE22005B0767 /* Main.storyboard */; };
 		37ECC9231C5FAE22005B0767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37ECC9221C5FAE22005B0767 /* Assets.xcassets */; };
-		37ECC9261C5FAE22005B0767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37ECC9241C5FAE22005B0767 /* LaunchScreen.storyboard */; };
-		37ECC9311C5FAE22005B0767 /* GoogleTuteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC9301C5FAE22005B0767 /* GoogleTuteTests.swift */; };
-		37ECC93C1C5FAE22005B0767 /* GoogleTuteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC93B1C5FAE22005B0767 /* GoogleTuteUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,14 +40,9 @@
 		37ECC91D1C5FAE22005B0767 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		37ECC9201C5FAE22005B0767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		37ECC9221C5FAE22005B0767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		37ECC9251C5FAE22005B0767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37ECC9271C5FAE22005B0767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37ECC92C1C5FAE22005B0767 /* GoogleTuteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleTuteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		37ECC9301C5FAE22005B0767 /* GoogleTuteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTuteTests.swift; sourceTree = "<group>"; };
-		37ECC9321C5FAE22005B0767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37ECC9371C5FAE22005B0767 /* GoogleTuteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleTuteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		37ECC93B1C5FAE22005B0767 /* GoogleTuteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTuteUITests.swift; sourceTree = "<group>"; };
-		37ECC93D1C5FAE22005B0767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FAEA8E1E8D24E144DB7571B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		983B73441A9F6E5A5670AFD8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AF9716E23F072AA423432AE7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,8 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				37ECC91A1C5FAE22005B0767 /* GoogleTute */,
-				37ECC92F1C5FAE22005B0767 /* GoogleTuteTests */,
-				37ECC93A1C5FAE22005B0767 /* GoogleTuteUITests */,
 				37ECC9191C5FAE22005B0767 /* Products */,
 				2B1127EC002CD97EE55CD698 /* Pods */,
 				EDA7512E0F558CC4FF12EC38 /* Frameworks */,
@@ -121,29 +110,10 @@
 				37ECC91D1C5FAE22005B0767 /* MapViewController.swift */,
 				379979A91C631D6C00815B18 /* ParseViewController.swift */,
 				37ECC91F1C5FAE22005B0767 /* Main.storyboard */,
-				37ECC9221C5FAE22005B0767 /* Assets.xcassets */,
-				37ECC9241C5FAE22005B0767 /* LaunchScreen.storyboard */,
 				37ECC9271C5FAE22005B0767 /* Info.plist */,
+				37ECC9221C5FAE22005B0767 /* Assets.xcassets */,
 			);
 			path = GoogleTute;
-			sourceTree = "<group>";
-		};
-		37ECC92F1C5FAE22005B0767 /* GoogleTuteTests */ = {
-			isa = PBXGroup;
-			children = (
-				37ECC9301C5FAE22005B0767 /* GoogleTuteTests.swift */,
-				37ECC9321C5FAE22005B0767 /* Info.plist */,
-			);
-			path = GoogleTuteTests;
-			sourceTree = "<group>";
-		};
-		37ECC93A1C5FAE22005B0767 /* GoogleTuteUITests */ = {
-			isa = PBXGroup;
-			children = (
-				37ECC93B1C5FAE22005B0767 /* GoogleTuteUITests.swift */,
-				37ECC93D1C5FAE22005B0767 /* Info.plist */,
-			);
-			path = GoogleTuteUITests;
 			sourceTree = "<group>";
 		};
 		EDA7512E0F558CC4FF12EC38 /* Frameworks */ = {
@@ -265,10 +235,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37ECC9261C5FAE22005B0767 /* LaunchScreen.storyboard in Resources */,
 				37ECC9231C5FAE22005B0767 /* Assets.xcassets in Resources */,
 				37ECC9211C5FAE22005B0767 /* Main.storyboard in Resources */,
-				37308D531C60F47900DAE9AB /* GoogleMaps.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +319,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37ECC9311C5FAE22005B0767 /* GoogleTuteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +326,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37ECC93C1C5FAE22005B0767 /* GoogleTuteUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,14 +351,6 @@
 				37ECC9201C5FAE22005B0767 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		37ECC9241C5FAE22005B0767 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				37ECC9251C5FAE22005B0767 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
