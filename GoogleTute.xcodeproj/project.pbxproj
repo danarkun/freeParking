@@ -1,0 +1,679 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0BD3E9D941C53682BA9946F7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9716E23F072AA423432AE7 /* Pods.framework */; };
+		37308D531C60F47900DAE9AB /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 37308D521C60F47900DAE9AB /* GoogleMaps.bundle */; };
+		379979AA1C631D6C00815B18 /* ParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379979A91C631D6C00815B18 /* ParseViewController.swift */; };
+		37ECC91C1C5FAE22005B0767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC91B1C5FAE22005B0767 /* AppDelegate.swift */; };
+		37ECC91E1C5FAE22005B0767 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC91D1C5FAE22005B0767 /* MapViewController.swift */; };
+		37ECC9211C5FAE22005B0767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37ECC91F1C5FAE22005B0767 /* Main.storyboard */; };
+		37ECC9231C5FAE22005B0767 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37ECC9221C5FAE22005B0767 /* Assets.xcassets */; };
+		37ECC9261C5FAE22005B0767 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37ECC9241C5FAE22005B0767 /* LaunchScreen.storyboard */; };
+		37ECC9311C5FAE22005B0767 /* GoogleTuteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC9301C5FAE22005B0767 /* GoogleTuteTests.swift */; };
+		37ECC93C1C5FAE22005B0767 /* GoogleTuteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC93B1C5FAE22005B0767 /* GoogleTuteUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		37ECC92D1C5FAE22005B0767 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37ECC9101C5FAE21005B0767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37ECC9171C5FAE22005B0767;
+			remoteInfo = GoogleTute;
+		};
+		37ECC9381C5FAE22005B0767 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 37ECC9101C5FAE21005B0767 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37ECC9171C5FAE22005B0767;
+			remoteInfo = GoogleTute;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		37308D521C60F47900DAE9AB /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Pods/PXGoogleDirections/Dependencies/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		379979A91C631D6C00815B18 /* ParseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseViewController.swift; sourceTree = "<group>"; };
+		37ECC9181C5FAE22005B0767 /* GoogleTute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleTute.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37ECC91B1C5FAE22005B0767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		37ECC91D1C5FAE22005B0767 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		37ECC9201C5FAE22005B0767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		37ECC9221C5FAE22005B0767 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		37ECC9251C5FAE22005B0767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		37ECC9271C5FAE22005B0767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37ECC92C1C5FAE22005B0767 /* GoogleTuteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleTuteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37ECC9301C5FAE22005B0767 /* GoogleTuteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTuteTests.swift; sourceTree = "<group>"; };
+		37ECC9321C5FAE22005B0767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37ECC9371C5FAE22005B0767 /* GoogleTuteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleTuteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		37ECC93B1C5FAE22005B0767 /* GoogleTuteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleTuteUITests.swift; sourceTree = "<group>"; };
+		37ECC93D1C5FAE22005B0767 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FAEA8E1E8D24E144DB7571B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		983B73441A9F6E5A5670AFD8 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AF9716E23F072AA423432AE7 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37ECC9151C5FAE22005B0767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BD3E9D941C53682BA9946F7 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37ECC9291C5FAE22005B0767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37ECC9341C5FAE22005B0767 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B1127EC002CD97EE55CD698 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FAEA8E1E8D24E144DB7571B /* Pods.debug.xcconfig */,
+				983B73441A9F6E5A5670AFD8 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		37ECC90F1C5FAE21005B0767 = {
+			isa = PBXGroup;
+			children = (
+				37ECC91A1C5FAE22005B0767 /* GoogleTute */,
+				37ECC92F1C5FAE22005B0767 /* GoogleTuteTests */,
+				37ECC93A1C5FAE22005B0767 /* GoogleTuteUITests */,
+				37ECC9191C5FAE22005B0767 /* Products */,
+				2B1127EC002CD97EE55CD698 /* Pods */,
+				EDA7512E0F558CC4FF12EC38 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		37ECC9191C5FAE22005B0767 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37ECC9181C5FAE22005B0767 /* GoogleTute.app */,
+				37ECC92C1C5FAE22005B0767 /* GoogleTuteTests.xctest */,
+				37ECC9371C5FAE22005B0767 /* GoogleTuteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37ECC91A1C5FAE22005B0767 /* GoogleTute */ = {
+			isa = PBXGroup;
+			children = (
+				37ECC91B1C5FAE22005B0767 /* AppDelegate.swift */,
+				37ECC91D1C5FAE22005B0767 /* MapViewController.swift */,
+				379979A91C631D6C00815B18 /* ParseViewController.swift */,
+				37ECC91F1C5FAE22005B0767 /* Main.storyboard */,
+				37ECC9221C5FAE22005B0767 /* Assets.xcassets */,
+				37ECC9241C5FAE22005B0767 /* LaunchScreen.storyboard */,
+				37ECC9271C5FAE22005B0767 /* Info.plist */,
+			);
+			path = GoogleTute;
+			sourceTree = "<group>";
+		};
+		37ECC92F1C5FAE22005B0767 /* GoogleTuteTests */ = {
+			isa = PBXGroup;
+			children = (
+				37ECC9301C5FAE22005B0767 /* GoogleTuteTests.swift */,
+				37ECC9321C5FAE22005B0767 /* Info.plist */,
+			);
+			path = GoogleTuteTests;
+			sourceTree = "<group>";
+		};
+		37ECC93A1C5FAE22005B0767 /* GoogleTuteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				37ECC93B1C5FAE22005B0767 /* GoogleTuteUITests.swift */,
+				37ECC93D1C5FAE22005B0767 /* Info.plist */,
+			);
+			path = GoogleTuteUITests;
+			sourceTree = "<group>";
+		};
+		EDA7512E0F558CC4FF12EC38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37308D521C60F47900DAE9AB /* GoogleMaps.bundle */,
+				AF9716E23F072AA423432AE7 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37ECC9171C5FAE22005B0767 /* GoogleTute */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37ECC9401C5FAE22005B0767 /* Build configuration list for PBXNativeTarget "GoogleTute" */;
+			buildPhases = (
+				468BFBF045D389DFDF7D3CCF /* Check Pods Manifest.lock */,
+				37ECC9141C5FAE22005B0767 /* Sources */,
+				37ECC9151C5FAE22005B0767 /* Frameworks */,
+				37ECC9161C5FAE22005B0767 /* Resources */,
+				C7135FFEA887877A9FEF22AD /* Embed Pods Frameworks */,
+				9102D4B9DAD18AD5E440427C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GoogleTute;
+			productName = GoogleTute;
+			productReference = 37ECC9181C5FAE22005B0767 /* GoogleTute.app */;
+			productType = "com.apple.product-type.application";
+		};
+		37ECC92B1C5FAE22005B0767 /* GoogleTuteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37ECC9431C5FAE22005B0767 /* Build configuration list for PBXNativeTarget "GoogleTuteTests" */;
+			buildPhases = (
+				37ECC9281C5FAE22005B0767 /* Sources */,
+				37ECC9291C5FAE22005B0767 /* Frameworks */,
+				37ECC92A1C5FAE22005B0767 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37ECC92E1C5FAE22005B0767 /* PBXTargetDependency */,
+			);
+			name = GoogleTuteTests;
+			productName = GoogleTuteTests;
+			productReference = 37ECC92C1C5FAE22005B0767 /* GoogleTuteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		37ECC9361C5FAE22005B0767 /* GoogleTuteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37ECC9461C5FAE22005B0767 /* Build configuration list for PBXNativeTarget "GoogleTuteUITests" */;
+			buildPhases = (
+				37ECC9331C5FAE22005B0767 /* Sources */,
+				37ECC9341C5FAE22005B0767 /* Frameworks */,
+				37ECC9351C5FAE22005B0767 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				37ECC9391C5FAE22005B0767 /* PBXTargetDependency */,
+			);
+			name = GoogleTuteUITests;
+			productName = GoogleTuteUITests;
+			productReference = 37ECC9371C5FAE22005B0767 /* GoogleTuteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37ECC9101C5FAE21005B0767 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Daniel Arkun";
+				TargetAttributes = {
+					37ECC9171C5FAE22005B0767 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = F556HRRS93;
+					};
+					37ECC92B1C5FAE22005B0767 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = F556HRRS93;
+						TestTargetID = 37ECC9171C5FAE22005B0767;
+					};
+					37ECC9361C5FAE22005B0767 = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = F556HRRS93;
+						TestTargetID = 37ECC9171C5FAE22005B0767;
+					};
+				};
+			};
+			buildConfigurationList = 37ECC9131C5FAE21005B0767 /* Build configuration list for PBXProject "GoogleTute" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 37ECC90F1C5FAE21005B0767;
+			productRefGroup = 37ECC9191C5FAE22005B0767 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37ECC9171C5FAE22005B0767 /* GoogleTute */,
+				37ECC92B1C5FAE22005B0767 /* GoogleTuteTests */,
+				37ECC9361C5FAE22005B0767 /* GoogleTuteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		37ECC9161C5FAE22005B0767 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37ECC9261C5FAE22005B0767 /* LaunchScreen.storyboard in Resources */,
+				37ECC9231C5FAE22005B0767 /* Assets.xcassets in Resources */,
+				37ECC9211C5FAE22005B0767 /* Main.storyboard in Resources */,
+				37308D531C60F47900DAE9AB /* GoogleMaps.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37ECC92A1C5FAE22005B0767 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37ECC9351C5FAE22005B0767 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		468BFBF045D389DFDF7D3CCF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9102D4B9DAD18AD5E440427C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7135FFEA887877A9FEF22AD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37ECC9141C5FAE22005B0767 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37ECC91E1C5FAE22005B0767 /* MapViewController.swift in Sources */,
+				379979AA1C631D6C00815B18 /* ParseViewController.swift in Sources */,
+				37ECC91C1C5FAE22005B0767 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37ECC9281C5FAE22005B0767 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37ECC9311C5FAE22005B0767 /* GoogleTuteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37ECC9331C5FAE22005B0767 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37ECC93C1C5FAE22005B0767 /* GoogleTuteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		37ECC92E1C5FAE22005B0767 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37ECC9171C5FAE22005B0767 /* GoogleTute */;
+			targetProxy = 37ECC92D1C5FAE22005B0767 /* PBXContainerItemProxy */;
+		};
+		37ECC9391C5FAE22005B0767 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 37ECC9171C5FAE22005B0767 /* GoogleTute */;
+			targetProxy = 37ECC9381C5FAE22005B0767 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		37ECC91F1C5FAE22005B0767 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37ECC9201C5FAE22005B0767 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		37ECC9241C5FAE22005B0767 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				37ECC9251C5FAE22005B0767 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		37ECC93E1C5FAE22005B0767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		37ECC93F1C5FAE22005B0767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		37ECC9411C5FAE22005B0767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FAEA8E1E8D24E144DB7571B /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = GoogleTute/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"GoogleMaps\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"GoogleMaps\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Dan.GoogleTute;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GoogleTute/GoogleTute-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		37ECC9421C5FAE22005B0767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 983B73441A9F6E5A5670AFD8 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = GoogleTute/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"icucore\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"CoreBluetooth\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"GoogleMaps\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"GoogleMaps\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Dan.GoogleTute;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "GoogleTute/GoogleTute-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		37ECC9441C5FAE22005B0767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GoogleTuteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dan.GoogleTuteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoogleTute.app/GoogleTute";
+			};
+			name = Debug;
+		};
+		37ECC9451C5FAE22005B0767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = GoogleTuteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dan.GoogleTuteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GoogleTute.app/GoogleTute";
+			};
+			name = Release;
+		};
+		37ECC9471C5FAE22005B0767 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GoogleTuteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dan.GoogleTuteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GoogleTute;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		37ECC9481C5FAE22005B0767 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = GoogleTuteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Dan.GoogleTuteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = GoogleTute;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37ECC9131C5FAE21005B0767 /* Build configuration list for PBXProject "GoogleTute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37ECC93E1C5FAE22005B0767 /* Debug */,
+				37ECC93F1C5FAE22005B0767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37ECC9401C5FAE22005B0767 /* Build configuration list for PBXNativeTarget "GoogleTute" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37ECC9411C5FAE22005B0767 /* Debug */,
+				37ECC9421C5FAE22005B0767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37ECC9431C5FAE22005B0767 /* Build configuration list for PBXNativeTarget "GoogleTuteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37ECC9441C5FAE22005B0767 /* Debug */,
+				37ECC9451C5FAE22005B0767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37ECC9461C5FAE22005B0767 /* Build configuration list for PBXNativeTarget "GoogleTuteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37ECC9471C5FAE22005B0767 /* Debug */,
+				37ECC9481C5FAE22005B0767 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37ECC9101C5FAE21005B0767 /* Project object */;
+}

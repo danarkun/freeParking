@@ -1,0 +1,1 @@
+ const unsigned char SwiftCSVTestsVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:SwiftCSVTests  PROJECT:SwiftCSV-1" "\n"; const double SwiftCSVTestsVersionNumber __attribute__ ((used)) = (double)1.;

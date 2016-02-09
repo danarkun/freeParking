@@ -1,0 +1,5 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "58f00ce93efc65b2f43fc05534c5c37a"
+build_time: [507856960, 714425000]
+inputs:
+  "/Users/Dan/Documents/Code/GoogleTute/GoogleTute/Pods/SwiftCSV/SwiftCSV/CSV.swift": [507821219, 0]
