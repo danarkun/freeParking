@@ -8,7 +8,6 @@
 
 import UIKit
 import GoogleMaps
-import Alamofire
 import CoreLocation
 
 class MapViewController: UIViewController {
