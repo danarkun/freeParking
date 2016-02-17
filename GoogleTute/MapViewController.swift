@@ -35,7 +35,7 @@ class MapViewController: UIViewController {
   func addMarker() {
     let instanceOne = ParseViewController()
       let firstRow = instanceOne.returnParse()
-      for (var i = 0; i < 114; i++) { // firstRow is entire tuple, iterate through and add markers. Need to find how to get length(firstRow)
+      for (var i = 0; i < 561; i++) { // firstRow is entire tuple, iterate through and add markers. Need to find how to get length(firstRow)
         let element = firstRow[i]
         let position = CLLocationCoordinate2DMake((element.lat as NSString).doubleValue,(element.long as NSString).doubleValue)
         let marker = GMSMarker(position: position)
