@@ -28,6 +28,7 @@ class ParseViewController: UIViewController {
     func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding, error: NSErrorPointer) -> [(lat:String, long:String, timeZone: String)] {
         // Load the CSV file and parse it
         let delimiter = ","
+        var length = 0
         var coords:[(lat: String, long: String, timeZone: String)]?
         if let data = NSData(contentsOfURL: contentsOfURL){
             if let content = NSString(data: data, encoding: NSUTF8StringEncoding) {
@@ -70,17 +71,17 @@ class ParseViewController: UIViewController {
                         } else  {
                             values = line.componentsSeparatedByString(delimiter)
                         }
-                        
+                        length = length++
                         // Put the values into the tuple and add it to the peoples array
                         let coord = (lat: values[0], long: values[1], timeZone: values[2])
                         coords?.append(coord)
                     }
-                    
+                    length = length++
                 }
             }
         }
-
-        return coords!
+        
+        return (coords!)
     }
     
     override func didReceiveMemoryWarning() {
