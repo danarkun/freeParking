@@ -16,9 +16,16 @@ class MapViewController: UIViewController {
 
     let locationManager = CLLocationManager()
     var lastLocation: CLLocation? = nil // Create internal value to store location from didUpdateLocation to use in func showDirection()
+    var isAnimating: Bool = false
+    var dropDownViewIsDisplayed: Bool = false
 
     override func viewDidLoad() {
       super.viewDidLoad()
+        
+        /* Drop down menu
+        var height: CGFloat  = self.dropDownView.frame.size.height
+        CGFloat(width) = 100
+        */
 
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()

@@ -33,18 +33,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bH6-mH-EJU" customClass="GMSMapView">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bH6-mH-EJU" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bH6-mH-EJU" firstAttribute="leading" secondItem="IZB-oM-FjE" secondAttribute="leading" id="9hv-XZ-32Y"/>
-                            <constraint firstItem="bH6-mH-EJU" firstAttribute="top" secondItem="IZB-oM-FjE" secondAttribute="top" id="axz-xd-ni8"/>
-                            <constraint firstAttribute="trailing" secondItem="bH6-mH-EJU" secondAttribute="trailing" id="kTE-bG-fUm"/>
-                        </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="z3W-hc-Urf"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="9sX-4S-dOh">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" id="DtA-Da-Yvf">
@@ -65,6 +63,7 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="bH6-mH-EJU" id="Dce-zG-te8"/>
                     </connections>
