@@ -21,7 +21,7 @@ class ParseViewController: UIViewController {
         let error = NSErrorPointer()
         let firstRow = parseCSV(url!, encoding: NSUTF8StringEncoding, error: error)
         return firstRow
-        // return firstRow to return whole tuple then operate in MapViewController::addMarker()
+        // Return firstRow to return whole tuple then operate on in MapViewController::addMarker()
     }
     
     // Parsing
