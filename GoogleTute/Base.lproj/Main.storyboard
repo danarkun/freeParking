@@ -49,7 +49,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fSM-Or-O0b">
                                 <rect key="frame" x="20" y="7" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Next Park"/>
                                 <connections>
                                     <action selector="nextPark:" destination="PJs-vs-Apa" eventType="touchUpInside" id="l83-z7-gJi"/>
                                 </connections>
@@ -59,7 +59,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Te-nb-oeP">
                                 <rect key="frame" x="447" y="7" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Direction"/>
+                                <state key="normal" title="Nearest Park"/>
                                 <connections>
                                     <action selector="showDirection:" destination="PJs-vs-Apa" eventType="touchUpInside" id="uhv-WO-cbC"/>
                                 </connections>

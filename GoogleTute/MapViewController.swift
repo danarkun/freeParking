@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     
+    var sortedMarkerGlobal: [(lat: String, long: String)] = []
     var nextParkCount: Int = 1 // Used to iterate over sortedMarkers with nextPark IBAction button
     
     let locationManager = CLLocationManager()
@@ -127,6 +128,7 @@ class MapViewController: UIViewController {
             sortedMarkers.append(latLongs)
             dynamicRow.removeAtIndex(indexToDelete) // Remove marker that has just been added
         }
+        sortedMarkerGlobal = sortedMarkers
         return sortedMarkers
         
         //
@@ -161,6 +163,8 @@ class MapViewController: UIViewController {
         }
         return (closestLat!, closestLong!) */
     }
+    
+    
     @IBAction func showDirection(sender: AnyObject) {
         let userLoc = lastLocation
         let locValue: CLLocationCoordinate2D = (userLoc?.coordinate)!
@@ -168,7 +172,7 @@ class MapViewController: UIViewController {
         let userLong = locValue.longitude
         let closestCoordsTuple = MapViewController()
         print("Passing in userLoc (lastLocation)")
-        let closestCoords = closestCoordsTuple.closestMarker(userLat, userLong: userLong)[1] // First element in sortedMarkers
+        let closestCoords = closestCoordsTuple.closestMarker(userLat, userLong: userLong)[0] // First element in sortedMarkers
         print("Finished calling closestMarker")
         let closestLatitude = closestCoords.0 // Set this to latitude returned from closestCoords
         let closestLongitude = closestCoords.1 // Set this to longitude returned from closestCoords
@@ -183,14 +187,17 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBAction func nextPark(sender: AnyObject) { // Press to find next closest park
+    @IBAction func nextPark(sender: AnyObject) { // Find next closest park ~ NEED to just be able to use sortedMarkerTuple instead
+        // callign closestMarker() again (takes too long)
+        print("nextPark")
         let userLoc = lastLocation
         let locValue: CLLocationCoordinate2D = (userLoc?.coordinate)!
         let userLat = locValue.latitude
         let userLong = locValue.longitude
-        let closestCoordsTuple = MapViewController()
         print("Passing in userLoc (lastLocation)")
-        let closestCoords = closestCoordsTuple.closestMarker(userLat, userLong: userLong)[nextParkCount] // First element in sortedMarkers
+        print("Second tuple count: ")
+        print(sortedMarkerGlobal.count)
+        let closestCoords = sortedMarkerGlobal[nextParkCount] // First element in sortedMarkers
         print("Finished calling closestMarker")
         let closestLatitude = closestCoords.0 // Set this to latitude returned from closestCoords
         let closestLongitude = closestCoords.1 // Set this to longitude returned from closestCoords
@@ -206,7 +213,6 @@ class MapViewController: UIViewController {
         
         nextParkCount++
     }
-    // Have a IBAction next button which takes you to next closest free park
 }
 
 
