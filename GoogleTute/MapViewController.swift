@@ -10,13 +10,14 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
+var sortedMarkerGlobal: [(lat: String, long: String)] = []
+
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     
-    var sortedMarkerGlobal: [(lat: String, long: String)] = []
-    var nextParkCount: Int = 1 // Used to iterate over sortedMarkers with nextPark IBAction button
     
+    var nextParkCount: Int = 1 // Used to iterate over sortedMarkersGlobal with nextPark IBAction button
     let locationManager = CLLocationManager()
     var lastLocation: CLLocation? = nil // Create internal value to store location from didUpdateLocation to use in func showDirection()
     var isAnimating: Bool = false
@@ -71,16 +72,9 @@ class MapViewController: UIViewController {
     
     func closestMarker(userLat: Double, userLong: Double)-> [(lat: String, long: String)] { // Loops through and sorts all markers
         // from closest to furthest from user's current location
-        
-        /*
-        var lengthRow = firstRow.count
-        
-        while (sortedMarkers.count != lengthRow) { // There are markers that haven't been added to sortedMarkers
-        // Haversine formula
-        // add nearest marker to sortedMarkers
-        // Remove recently added marker from ParseViewControler() type tuple
-        // Recurse until all markers are in sortedMarkers
-        }
+
+        /* Don't loop through entire while loop and store in global (takes too long). Call sortedMarker but delete the previous index everytime so when
+        nextPark is pressed the for loop runs through and finds the next closest.
         */
         
         let markerToTest = ParseViewController()
@@ -130,6 +124,8 @@ class MapViewController: UIViewController {
             dynamicRow.removeAtIndex(indexToDelete) // Remove marker that has just been added
         }
         sortedMarkerGlobal = sortedMarkers
+        print("sortedMarkerGlobal in closestMarker: ")
+        print(sortedMarkerGlobal.count)
         return sortedMarkers
         
         //
@@ -188,15 +184,13 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBAction func nextPark(sender: AnyObject) { // Find next closest park ~ NEED to just be able to use sortedMarkerTuple instead
-        // callign closestMarker() again (takes too long)
+    @IBAction func nextPark(sender: AnyObject) {
         print("nextPark")
         let userLoc = lastLocation
         let locValue: CLLocationCoordinate2D = (userLoc?.coordinate)!
         let userLat = locValue.latitude
         let userLong = locValue.longitude
-        print("Passing in userLoc (lastLocation)")
-        print("Second tuple count: ")
+        print("sortedMarkerGlobal in nextPark: ")
         print(sortedMarkerGlobal.count)
         let closestCoords = sortedMarkerGlobal[nextParkCount] // First element in sortedMarkers
         print("Finished calling closestMarker")
