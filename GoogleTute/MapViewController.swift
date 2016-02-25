@@ -69,7 +69,8 @@ class MapViewController: UIViewController {
     func degreesToRadians(degrees: Double) -> Double { return degrees * M_PI / 180.00 }
     func radiansToDegrees(radians: Double) -> Double { return radians * 180.00 * M_PI }
     
-    func closestMarker(userLat: Double, userLong: Double)-> [(lat: String, long: String)] {
+    func closestMarker(userLat: Double, userLong: Double)-> [(lat: String, long: String)] { // Loops through and sorts all markers
+        // from closest to furthest from user's current location
         
         /*
         var lengthRow = firstRow.count
