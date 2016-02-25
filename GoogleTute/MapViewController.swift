@@ -10,14 +10,12 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-var sortedMarkerGlobal: [(lat: String, long: String)] = []
+var sortedMarkerGlobal: [(lat: String, long: String, timeZone: String)] = []
+var indexToDelete: Int = 0 // Used to delete the marker which has been added to sortedMarkers tuple
 
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
-    
-    
-    var nextParkCount: Int = 1 // Used to iterate over sortedMarkersGlobal with nextPark IBAction button
     let locationManager = CLLocationManager()
     var lastLocation: CLLocation? = nil // Create internal value to store location from didUpdateLocation to use in func showDirection()
     var isAnimating: Bool = false
@@ -70,107 +68,99 @@ class MapViewController: UIViewController {
     func degreesToRadians(degrees: Double) -> Double { return degrees * M_PI / 180.00 }
     func radiansToDegrees(radians: Double) -> Double { return radians * 180.00 * M_PI }
     
-    func closestMarker(userLat: Double, userLong: Double)-> [(lat: String, long: String)] { // Loops through and sorts all markers
-        // from closest to furthest from user's current location
-
-        /* Don't loop through entire while loop and store in global (takes too long). Call sortedMarker but delete the previous index everytime so when
-        nextPark is pressed the for loop runs through and finds the next closest.
-        */
-        
+    func closestMarker(userLat: Double, userLong: Double)-> (lat: Double, long: Double) { // Finds the closest marker to the user's location
+        indexToDelete = 0 // Ensure that the correct marker is deleted via its index
         let markerToTest = ParseViewController()
         let firstRow = markerToTest.returnParse()
         let lat2 = degreesToRadians(userLat) // Nearest lat in radians
         let long2 = degreesToRadians(userLong) // Nearest long in radians
-        
         let R = (6371).doubleValue // Radius of earth in km
         
         var closestLat: Double? = nil // Used to store the latitude of the closest marker
         var closestLong: Double? = nil // Used to store the longitude of the closest marker
+        var dynamicRow = firstRow // Used to reset sortedMarkerGlobal to the original tuple
+        var shortestDistance = 100.00E100
         
-        //
-        var indexToDelete: Int = 0 // Used to delete the marker which has been added to sortedMarkers tuple
-        let lengthRow = firstRow.count
-        var latLongs: (String, String)
-        var sortedMarkers: [(lat: String, long: String)] = []
-        
-        var dynamicRow = firstRow // Tuple that has markers deleted from it
-        
-        while (sortedMarkers.count != lengthRow) { // Store markers from closest to furtherst distance from user
-                    var shortestDistance = 100.00E100
-            for (var i = 0; i < dynamicRow.count; i++) {
-                    let testMarker = dynamicRow[i]
-                    let testLat = (testMarker.lat as NSString)
-                    let testLong = (testMarker.long as NSString)
-                    let doubleLat = Double(testLat as String)
-                    let doubleLong = Double(testLong as String)
-                    let lat1 = degreesToRadians(doubleLat!)
-                    let long1 = degreesToRadians(doubleLong!)
-                    
-                    let dLat = lat2 - lat1
-                    let dLong = long2 - long1
-                    
-                    let a = ((sin((dLat)/2)) * (sin((dLat)/2))) + (cos(lat1)*cos(lat2)*((sin((dLong)/2)) * (sin((dLong)/2))))
-                    let b = sqrt(a)
-                    let d = (2*R) * (asin(b)) // Haversine formula
-                    if (d < shortestDistance) {
-                        closestLat = (doubleLat)
-                        closestLong = (doubleLong)
-                        shortestDistance = d
-                        indexToDelete = i// Keep updating index of closest marker to later be removed
-                    }
-                }
-            latLongs = (String(closestLat!), String(closestLong!)) // Each time for loop will find closest marker ~ NOT WORKING ~
-            sortedMarkers.append(latLongs)
-            dynamicRow.removeAtIndex(indexToDelete) // Remove marker that has just been added
+        for (var i = 0; i < firstRow.count; i++) {
+            
+            let testMarker = firstRow[i]
+            let testLat = (testMarker.lat as NSString)
+            let doubleLat = Double(testLat as String)
+            let testLong = (testMarker.long as NSString)
+            let doubleLong = Double(testLong as String)
+            let lat1 = degreesToRadians(doubleLat!)
+            let long1 = degreesToRadians(doubleLong!)
+            
+            let dLat = lat2 - lat1
+            let dLong = long2 - long1
+            
+            let a = ((sin((dLat)/2)) * (sin((dLat)/2))) + (cos(lat1)*cos(lat2)*((sin((dLong)/2)) * (sin((dLong)/2))))
+            let b = sqrt(a)
+            let d = (2*R) * (asin(b)) // Haversine formula
+            
+            if (d < shortestDistance) {
+                closestLat = (doubleLat)
+                closestLong = (doubleLong)
+                shortestDistance = d
+                indexToDelete = i
+            }
         }
-        sortedMarkerGlobal = sortedMarkers
-        print("sortedMarkerGlobal in closestMarker: ")
-        print(sortedMarkerGlobal.count)
-        return sortedMarkers
-        
-        //
-        
-        
-        /* for (var i = 0; i < firstRow.count; i++) {
-        
-        let testMarker = firstRow[i]
-        let testLat = (testMarker.lat as NSString)
-        let doubleLat = Double(testLat as String)
-        let testLong = (testMarker.long as NSString)
-        let doubleLong = Double(testLong as String)
-        let lat1 = degreesToRadians(doubleLat!)
-        let long1 = degreesToRadians(doubleLong!)
-        
-        let dLat = lat2 - lat1
-        let dLong = long2 - long1
-        
-        let a = ((sin((dLat)/2)) * (sin((dLat)/2))) + (cos(lat1)*cos(lat2)*((sin((dLong)/2)) * (sin((dLong)/2))))
-        let b = sqrt(a)
-        let d = (2*R) * (asin(b)) // Haversine formula
-        
-        if (d < shortestDistance) {
-        closestLat = (doubleLat)
-        print(doubleLat)
-        closestLong = (doubleLong)
-        print(doubleLong)
-        shortestDistance = d
-        }
-        print("Closest distance: \(d)")
-        
-        }
-        return (closestLat!, closestLong!) */
+        dynamicRow.removeAtIndex(indexToDelete)
+        sortedMarkerGlobal = dynamicRow // Only used on initial find marker
+        return (closestLat!, closestLong!)
     }
     
+    func closestMarkerIndexed(userLat: Double, userLong: Double)-> (lat: Double, long: Double) { // Determines closest marker from modified
+        // tuple (sortedMarkerGlobal). Everytime this is called, the most recent closest marker is removed from the tuple
+        // to be able to find the next closest (so it doesn't keep returning the same marker)
+        
+        let lat2 = degreesToRadians(userLat) // Nearest lat in radians
+        let long2 = degreesToRadians(userLong) // Nearest long in radians
+        let R = (6371).doubleValue // Radius of earth in km
+
+        var closestLat: Double? = nil // Used to store the latitude of the closest marker
+        var closestLong: Double? = nil // Used to store the longitude of the closest marker
+        var indexToDelete: Int = 0 // Used to delete the marker which has been added to sortedMarkers tuple
+        var shortestDistance = 100.00E100
+        var i = 0
+        
+        for (i = 0; i < sortedMarkerGlobal.count; i++) {
+            
+            let testMarker = sortedMarkerGlobal[i]
+            let testLat = (testMarker.lat as NSString)
+            let doubleLat = Double(testLat as String)
+            let testLong = (testMarker.long as NSString)
+            let doubleLong = Double(testLong as String)
+            let lat1 = degreesToRadians(doubleLat!)
+            let long1 = degreesToRadians(doubleLong!)
+            
+            let dLat = lat2 - lat1
+            let dLong = long2 - long1
+            
+            let a = ((sin((dLat)/2)) * (sin((dLat)/2))) + (cos(lat1)*cos(lat2)*((sin((dLong)/2)) * (sin((dLong)/2))))
+            let b = sqrt(a)
+            let d = (2*R) * (asin(b)) // Haversine formula
+            
+            if (d < shortestDistance) {
+                closestLat = (doubleLat)
+                closestLong = (doubleLong)
+                shortestDistance = d
+                indexToDelete = i
+            }
+            
+        }
+        sortedMarkerGlobal.removeAtIndex(indexToDelete)
+        return (closestLat!, closestLong!)
+    }
     
-    @IBAction func showDirection(sender: AnyObject) {
+    @IBAction func showDirection(sender: UIButton?) {
+        print("showDirection called")
         let userLoc = lastLocation
         let locValue: CLLocationCoordinate2D = (userLoc?.coordinate)!
         let userLat = locValue.latitude
         let userLong = locValue.longitude
         let closestCoordsTuple = MapViewController()
-        print("Passing in userLoc (lastLocation)")
-        let closestCoords = closestCoordsTuple.closestMarker(userLat, userLong: userLong)[0] // First element in sortedMarkers
-        print("Finished calling closestMarker")
+        let closestCoords = closestCoordsTuple.closestMarker(userLat, userLong: userLong) // First element in sortedMarkers
         let closestLatitude = closestCoords.0 // Set this to latitude returned from closestCoords
         let closestLongitude = closestCoords.1 // Set this to longitude returned from closestCoords
         var urlString = "http://maps.google.com/maps?"
@@ -186,13 +176,18 @@ class MapViewController: UIViewController {
     
     @IBAction func nextPark(sender: AnyObject) {
         print("nextPark")
+        if (sortedMarkerGlobal.count == 0) { // Incase sortedMarkerGlobal hasn't been instantiated from initial showDirection()
+            showDirection(nil)
+        }
+        else {
         let userLoc = lastLocation
         let locValue: CLLocationCoordinate2D = (userLoc?.coordinate)!
         let userLat = locValue.latitude
         let userLong = locValue.longitude
         print("sortedMarkerGlobal in nextPark: ")
         print(sortedMarkerGlobal.count)
-        let closestCoords = sortedMarkerGlobal[nextParkCount] // First element in sortedMarkers
+        let closestCoordsTuple = MapViewController()
+        let closestCoords = closestCoordsTuple.closestMarkerIndexed(userLat, userLong: userLong) // First element in sortedMarkerIndexed
         print("Finished calling closestMarker")
         let closestLatitude = closestCoords.0 // Set this to latitude returned from closestCoords
         let closestLongitude = closestCoords.1 // Set this to longitude returned from closestCoords
@@ -204,14 +199,10 @@ class MapViewController: UIViewController {
         if let url = NSURL(string: urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
         {
             UIApplication.sharedApplication().openURL(url)
+            }
         }
-        
-        nextParkCount++
     }
 }
-
-
-
 
 extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
