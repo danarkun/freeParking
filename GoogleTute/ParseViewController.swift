@@ -17,7 +17,7 @@ class ParseViewController: UIViewController {
     }
     
     func returnParse() -> [(lat: String, long: String, timeZone: String)]    {
-        let url = NSURL(string: "https://dl.dropboxusercontent.com/u/50133881/CSV/coords.csv")
+        let url = NSURL(string: "https://dl.dropboxusercontent.com/u/50133881/CSV/freeParking.csv")
         let error = NSErrorPointer()
         let firstRow = parseCSV(url!, encoding: NSUTF8StringEncoding, error: error)
         return firstRow

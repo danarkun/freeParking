@@ -35,6 +35,7 @@ class MapViewController: UIViewController {
         let camera = GMSCameraPosition.cameraWithLatitude(-34.9290,
             longitude:138.6010, zoom:10)
         let mapView = GMSMapView.mapWithFrame(CGRectZero, camera:camera)
+        mapView.settings.myLocationButton = true
         mapView.mapType = kGMSTypeNormal
         print("Calling addMarker")
         addMarker()
@@ -49,7 +50,7 @@ class MapViewController: UIViewController {
             let element = firstRow[i]
             let position = CLLocationCoordinate2DMake((element.lat as NSString).doubleValue,(element.long as NSString).doubleValue)
             let marker = GMSMarker(position: position)
-            marker.title = element.timeZone
+            marker.snippet = element.timeZone
             marker.appearAnimation = kGMSMarkerAnimationPop
             marker.map = mapView
         }
