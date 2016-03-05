@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0BD3E9D941C53682BA9946F7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF9716E23F072AA423432AE7 /* Pods.framework */; };
+		3735BC941C898C710023B448 /* TableTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3735BC931C898C710023B448 /* TableTypeController.swift */; };
+		3735BC961C898D5A0023B448 /* TimeZoneTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3735BC951C898D5A0023B448 /* TimeZoneTable.swift */; };
 		379979AA1C631D6C00815B18 /* ParseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379979A91C631D6C00815B18 /* ParseViewController.swift */; };
 		37ECC91C1C5FAE22005B0767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC91B1C5FAE22005B0767 /* AppDelegate.swift */; };
 		37ECC91E1C5FAE22005B0767 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ECC91D1C5FAE22005B0767 /* MapViewController.swift */; };
@@ -34,8 +36,10 @@
 
 /* Begin PBXFileReference section */
 		37308D521C60F47900DAE9AB /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Pods/PXGoogleDirections/Dependencies/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		3735BC931C898C710023B448 /* TableTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableTypeController.swift; sourceTree = "<group>"; };
+		3735BC951C898D5A0023B448 /* TimeZoneTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeZoneTable.swift; sourceTree = "<group>"; };
 		379979A91C631D6C00815B18 /* ParseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseViewController.swift; sourceTree = "<group>"; };
-		37ECC9181C5FAE22005B0767 /* GoogleTute.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleTute.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		37ECC9181C5FAE22005B0767 /* Free Parking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Free Parking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37ECC91B1C5FAE22005B0767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37ECC91D1C5FAE22005B0767 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		37ECC9201C5FAE22005B0767 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,7 +100,7 @@
 		37ECC9191C5FAE22005B0767 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				37ECC9181C5FAE22005B0767 /* GoogleTute.app */,
+				37ECC9181C5FAE22005B0767 /* Free Parking.app */,
 				37ECC92C1C5FAE22005B0767 /* GoogleTuteTests.xctest */,
 				37ECC9371C5FAE22005B0767 /* GoogleTuteUITests.xctest */,
 			);
@@ -112,6 +116,8 @@
 				37ECC91F1C5FAE22005B0767 /* Main.storyboard */,
 				37ECC9271C5FAE22005B0767 /* Info.plist */,
 				37ECC9221C5FAE22005B0767 /* Assets.xcassets */,
+				3735BC931C898C710023B448 /* TableTypeController.swift */,
+				3735BC951C898D5A0023B448 /* TimeZoneTable.swift */,
 			);
 			path = GoogleTute;
 			sourceTree = "<group>";
@@ -145,7 +151,7 @@
 			);
 			name = GoogleTute;
 			productName = GoogleTute;
-			productReference = 37ECC9181C5FAE22005B0767 /* GoogleTute.app */;
+			productReference = 37ECC9181C5FAE22005B0767 /* Free Parking.app */;
 			productType = "com.apple.product-type.application";
 		};
 		37ECC92B1C5FAE22005B0767 /* GoogleTuteTests */ = {
@@ -311,7 +317,9 @@
 			files = (
 				37ECC91E1C5FAE22005B0767 /* MapViewController.swift in Sources */,
 				379979AA1C631D6C00815B18 /* ParseViewController.swift in Sources */,
+				3735BC941C898C710023B448 /* TableTypeController.swift in Sources */,
 				37ECC91C1C5FAE22005B0767 /* AppDelegate.swift in Sources */,
+				3735BC961C898D5A0023B448 /* TimeZoneTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,7 +497,7 @@
 					"\"GoogleMaps\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Dan.GoogleTute;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Free Parking";
 				SWIFT_OBJC_BRIDGING_HEADER = "GoogleTute/GoogleTute-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -541,7 +549,7 @@
 					"\"GoogleMaps\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Dan.GoogleTute;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Free Parking";
 				SWIFT_OBJC_BRIDGING_HEADER = "GoogleTute/GoogleTute-Bridging-Header.h";
 			};
 			name = Release;

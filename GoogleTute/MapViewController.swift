@@ -10,12 +10,14 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-var sortedMarkerGlobal: [(lat: String, long: String, timeZone: String)] = []
+var constantMarkersGlobal:[(lat: String, long: String, timeZone: String, timeValue: String, numberOfParks: String)] = [] // To store untampered tuple of all markers (used in filteredMarker())
+var sortedMarkerGlobal: [(lat: String, long: String, timeZone: String, timeValue: String, numberOfParks: String)] = []
 var indexToDelete: Int = 0 // Used to delete the marker which has been added to sortedMarkers tuple
 
 class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
+    var currentPositionMarker = GMSMarker()
     let locationManager = CLLocationManager()
     var lastLocation: CLLocation? = nil // Create internal value to store location from didUpdateLocation to use in func showDirection()
     var isAnimating: Bool = false
@@ -45,6 +47,7 @@ class MapViewController: UIViewController {
     func addMarker() {
         let instanceOne = ParseViewController()
         let firstRow = instanceOne.returnParse()
+        constantMarkersGlobal = instanceOne.returnParse()
         print(firstRow.count)
         for (var i = 0; i < firstRow.count; i++) { // firstRow is entire tuple, iterate through and add markers. Need to find how to get length(firstRow)
             let element = firstRow[i]
@@ -55,6 +58,22 @@ class MapViewController: UIViewController {
             marker.map = mapView
         }
     }
+    
+    /* func filteredMarker() { // IBAction this. When called an option will be selected and that will be passed to determine which markers are added to the blank map
+        mapView.clear() // Clear all markers so can add only the ones that the user wants to see
+        for (var i = 0; i < constantMarkersGlobal.count; i++) { // firstRow is entire tuple, iterate through and add markers. Need to find how to get length(firstRow)
+            let element = constantMarkersGlobal[i]
+            if (element.timeValue == userOption) { // userOption is the option of markers that the user choses to see
+                let position = CLLocationCoordinate2DMake((element.lat as NSString).doubleValue,(element.long as NSString).doubleValue)
+                let marker = GMSMarker(position: position)
+                marker.snippet = element.timeZone
+                marker.appearAnimation = kGMSMarkerAnimationPop
+                marker.map = mapView
+            }
+        }
+    }
+    */
+    
     
     func addPolyLineWithEncodedStringInMap(encodedString: String) {
         
@@ -110,6 +129,7 @@ class MapViewController: UIViewController {
         sortedMarkerGlobal = dynamicRow // Only used on initial find marker
         return (closestLat!, closestLong!)
     }
+
     
     func closestMarkerIndexed(userLat: Double, userLong: Double)-> (lat: Double, long: Double) { // Determines closest marker from modified
         // tuple (sortedMarkerGlobal). Everytime this is called, the most recent closest marker is removed from the tuple
@@ -155,6 +175,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func showDirection(sender: UIButton?) {
+        
         print("showDirection called")
         let userLoc = lastLocation
         let locValue: CLLocationCoordinate2D = (userLoc?.coordinate)!
@@ -164,16 +185,17 @@ class MapViewController: UIViewController {
         let closestCoords = closestCoordsTuple.closestMarker(userLat, userLong: userLong) // First element in sortedMarkers
         let closestLatitude = closestCoords.0 // Set this to latitude returned from closestCoords
         let closestLongitude = closestCoords.1 // Set this to longitude returned from closestCoords
-        var urlString = "http://maps.google.com/maps?"
+        var urlString = "?"
         urlString += "saddr= \(userLat), \(userLong)" // Change user lat and long to returned values from shortestDistance
         urlString += "&daddr= \(closestLatitude), \(closestLongitude)" // Find how to get directions to closest park
         print(urlString)
         
         if let url = NSURL(string: urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
         {
-            UIApplication.sharedApplication().openURL(url)
+            UIApplication.sharedApplication().openURL(NSURL(string: "comgooglemaps://\(url)")!)
         }
     }
+
     
     @IBAction func nextPark(sender: AnyObject) {
         print("nextPark")
@@ -192,14 +214,14 @@ class MapViewController: UIViewController {
         print("Finished calling closestMarker")
         let closestLatitude = closestCoords.0 // Set this to latitude returned from closestCoords
         let closestLongitude = closestCoords.1 // Set this to longitude returned from closestCoords
-        var urlString = "http://maps.google.com/maps?"
-        urlString += "saddr= \(userLat), \(userLong)" // Change user lat and long to returned values from shortestDistance
-        urlString += "&daddr= \(closestLatitude), \(closestLongitude)" // Find how to get directions to closest park
-        print(urlString)
-        
-        if let url = NSURL(string: urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
-        {
-            UIApplication.sharedApplication().openURL(url)
+            var urlString = "http://maps.google.com/maps?"
+            urlString += "saddr= \(userLat), \(userLong)" // Change user lat and long to returned values from shortestDistance
+            urlString += "&daddr= \(closestLatitude), \(closestLongitude)" // Find how to get directions to closest park
+            print(urlString)
+            
+            if let url = NSURL(string: urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
+            {
+                UIApplication.sharedApplication().openURL(NSURL(string: "comgooglemaps://\(url)")!)
             }
         }
     }
@@ -218,10 +240,10 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             lastLocation = location // Store user location in lastLocation variable to be used in func showDirection()
-            mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-            locationManager.stopUpdatingLocation()
+            // mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
         }
     }
+    
 }
 
 extension MapViewController: GMSMapViewDelegate {

@@ -9,14 +9,13 @@
 import UIKit
 
 class ParseViewController: UIViewController {
-    @IBOutlet weak var parseText: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Start viewDidLoad")
     }
     
-    func returnParse() -> [(lat: String, long: String, timeZone: String)]    {
+    func returnParse() -> [(lat: String, long: String, timeZone: String, timeValue: String, numberOfParks: String)]    {
         let url = NSURL(string: "https://dl.dropboxusercontent.com/u/50133881/CSV/freeParking.csv")
         let error = NSErrorPointer()
         let firstRow = parseCSV(url!, encoding: NSUTF8StringEncoding, error: error)
@@ -25,11 +24,11 @@ class ParseViewController: UIViewController {
     }
     
     // Parsing
-    func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding, error: NSErrorPointer) -> [(lat:String, long:String, timeZone: String)] {
+    func parseCSV (contentsOfURL: NSURL, encoding: NSStringEncoding, error: NSErrorPointer) -> [(lat:String, long:String, timeZone: String, timeValue: String, numberOfParks: String)] {
         // Load the CSV file and parse it
         let delimiter = ","
         var length = 0
-        var coords:[(lat: String, long: String, timeZone: String)]?
+        var coords:[(lat: String, long: String, timeZone: String, timeValue: String, numberOfParks: String)]?
         if let data = NSData(contentsOfURL: contentsOfURL){
             if let content = NSString(data: data, encoding: NSUTF8StringEncoding) {
                 coords = []
@@ -73,7 +72,7 @@ class ParseViewController: UIViewController {
                         }
                         length = length++
                         // Put the values into the tuple and add it to the peoples array
-                        let coord = (lat: values[0], long: values[1], timeZone: values[2])
+                        let coord = (lat: values[0], long: values[1], timeZone: values[2], timeValue: values[3], numberOfParks: values[4])
                         coords?.append(coord)
                     }
                     length = length++
