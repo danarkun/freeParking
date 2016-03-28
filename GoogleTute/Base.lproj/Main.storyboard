@@ -53,9 +53,9 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fSM-Or-O0b">
                                 <rect key="frame" x="20" y="7" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Next Park"/>
+                                <state key="normal" title="Nearest Park"/>
                                 <connections>
-                                    <action selector="nextPark:" destination="PJs-vs-Apa" eventType="touchUpInside" id="l83-z7-gJi"/>
+                                    <action selector="showDirection:" destination="PJs-vs-Apa" eventType="touchUpInside" id="liH-Is-SGn"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -73,9 +73,9 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="0Te-nb-oeP">
                                 <rect key="frame" x="447" y="7" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Nearest Park"/>
+                                <state key="normal" title="Next Park"/>
                                 <connections>
-                                    <action selector="showDirection:" destination="PJs-vs-Apa" eventType="touchUpInside" id="uhv-WO-cbC"/>
+                                    <action selector="nextPark:" destination="PJs-vs-Apa" eventType="touchUpInside" id="ZDV-V6-EOP"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -125,7 +125,7 @@
                                             <rect key="frame" x="15" y="0.0" width="570" height="43"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
