@@ -15,7 +15,7 @@ var sortedMarkerGlobal: [(lat: String, long: String, timeZone: String, timeValue
 var indexToDelete: Int = 0 // Used to delete the marker which has been added to sortedMarkers tuple
 var stopUpdating: Bool = false
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GMSMapViewDelegate {
     
     @IBOutlet weak var mapView: GMSMapView!
     var currentPositionMarker = GMSMarker()
@@ -44,11 +44,39 @@ class MapViewController: UIViewController {
         mapView.mapType = kGMSTypeNormal
         print("Calling addMarker")
         addMarker()
-        mapView.delegate = self
+        self.mapView.delegate = self
     }
     
     override func viewDidAppear(animated: Bool) {
         // mapView.camera = GMSCameraPosition(target: lastLocation!.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+    }
+
+    func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) { // Function for directions to tapped marker
+        print("Called didTap")
+        let googleMarker = mapView.selectedMarker // Set googleMarker to the marker that was tapped
+        let markerValue: CLLocationCoordinate2D = googleMarker.position // Aquire coordinates of tapped marker
+        let markerLat = markerValue.latitude // Acquire latitude of tapped marker
+        let markerLong = markerValue.longitude // Acquire longitude of tapped marker
+        print("markerLat: \(markerLat)")
+        print("markerLong: \(markerLong)")
+        mapView.selectedMarker = nil
+        mapView.delegate = self
+        
+        let userLoc = lastLocation
+        let locValue: CLLocationCoordinate2D = (userLoc?.coordinate)!
+        let userLat = locValue.latitude
+        let userLong = locValue.longitude
+        
+        var urlString = "?"
+        urlString += "saddr= \(userLat), \(userLong)" // Change user lat and long to returned values from shortestDistance
+        urlString += "&daddr= \(markerLat), \(markerLong)" // Find how to get directions to closest park
+        print(urlString)
+        
+        if let url = NSURL(string: urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!)
+        {
+            UIApplication.sharedApplication().openURL(NSURL(string: "comgooglemaps://\(url)")!)
+        }
+        
     }
     
     func addMarker() {
@@ -60,7 +88,8 @@ class MapViewController: UIViewController {
             let element = firstRow[i]
             let position = CLLocationCoordinate2DMake((element.lat as NSString).doubleValue,(element.long as NSString).doubleValue)
             let marker = GMSMarker(position: position)
-            marker.snippet = element.timeZone
+            marker.snippet = element.timeZone +
+            "\nTap here for directions to this park"
             marker.appearAnimation = kGMSMarkerAnimationPop
             marker.map = mapView
         }
@@ -70,7 +99,7 @@ class MapViewController: UIViewController {
     mapView.clear() // Clear all markers so can add only the ones that the user wants to see
     for (var i = 0; i < constantMarkersGlobal.count; i++) { // firstRow is entire tuple, iterate through and add markers. Need to find how to get length(firstRow)
     let element = constantMarkersGlobal[i]
-    if (element.timeValue == userOption) { // userOption is the option of markers that the user choses to see
+    if (element.timeValue == userOption) { // userOption is the option of markers (time zones) that the user choses to see
     let position = CLLocationCoordinate2DMake((element.lat as NSString).doubleValue,(element.long as NSString).doubleValue)
     let marker = GMSMarker(position: position)
     marker.snippet = element.timeZone
@@ -240,13 +269,6 @@ class MapViewController: UIViewController {
             }
         }
     }
-    
-    /* func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
-        let googleMarker = mapView.selectedMarker
-        let markerValue: CLLocationCoordinate2D = (googleMarker.coordinate)!
-        
-        
-    } */
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -271,8 +293,17 @@ extension MapViewController: CLLocationManagerDelegate {
     
 }
 
-extension MapViewController: GMSMapViewDelegate {
-    func mapView(mapView: GMSMapView!, idleAtCameraPosition position: GMSCameraPosition!) {
-        
+/* extension MapViewController: GMSMapViewDelegate {
+    
+    func mapView(mapView: GMSMapView!, didTapInfoWindowOfMarker marker: GMSMarker!) {
+        print("Called didTap")
+        let googleMarker = mapView.selectedMarker
+        let markerValue: CLLocationCoordinate2D = googleMarker.position
+        let markerLat = markerValue.latitude
+        let markerLong = markerValue.longitude
+        print("markerLat: \(markerLat)")
+        print("markerLong: \(markerLong)")
+        mapView.selectedMarker = nil
+        mapView.delegate = self
     }
-}
+} */
